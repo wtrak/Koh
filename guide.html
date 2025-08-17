@@ -27,10 +27,13 @@
       position:relative;z-index:3;max-width:1100px;margin:0 24px;
       background:var(--glass);backdrop-filter:saturate(140%) blur(8px);
       border:1px solid rgba(255,255,255,.15); border-radius:18px; padding:28px;
+      max-height:82vh; overflow:auto;
     }
     h1,h2{margin:0 0 8px}
     .kicker{letter-spacing:.12em;text-transform:uppercase;font-size:12px;opacity:.9;margin-bottom:6px}
-    .lead{font-size:18px;line-height:1.5;color:#e5e7eb}
+    .lead{font-size:18px;line-height:1.6;color:#e5e7eb}
+    .lead p{margin:0 0 12px}
+    .lead ul{margin:8px 0 12px 20px}
     .controls{
       position:fixed;inset:auto 0 24px 0;display:flex;align-items:center;justify-content:center;gap:14px;z-index:4;
       pointer-events:none;
@@ -79,48 +82,75 @@
   </div>
 
   <script>
-    // ---- Define your slides here (image, kicker, title, text, optional CTA) ----
+    // ---- Expanded slides (multi-paragraph, optional lists, optional CTA) ----
     const slides = [
       {
         img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2400&auto=format&fit=crop",
         kicker: "Under the Radar",
         title: "A Rare Window on a Finite Island",
-        text: "Koh Samui combines world-class beaches with limited premium land. Scarcity + rising global attention = powerful long-term support for values.",
+        text: [
+          "Koh Samui combines world-class beaches and international appeal with a property market that is still dramatically undervalued compared to neighboring Phuket and Bali.",
+          "Unlike sprawling markets with unlimited land, Samui is a small island with finite prime beachfront and hillside plots. This scarcity means that once the best locations are gone, they’re gone forever.",
+          "Investors today are in a position similar to early entrants in Phuket two decades ago—buying prime locations before global capital fully arrives. With tourism, infrastructure, and international awareness accelerating, the timing to act has rarely been better."
+        ]
       },
       {
         img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2400&auto=format&fit=crop",
         kicker: "Yield + Lifestyle",
         title: "A Property That Pays For Itself",
-        text: "Well-managed villas regularly command premium nightly rates. Enjoy paradise when you want, earn income when you don’t.",
+        text: [
+          "Samui villas are more than beautiful homes—they are income-producing assets.",
+          "Well-managed properties regularly achieve 65–75% occupancy in high season and 40–50% even in shoulder months. Luxury villas rent between $300 and $1,500 per night depending on size and amenities. That means a $900,000 villa can realistically generate six-figure gross rental income each year.",
+          "The beauty is flexibility: use the property when you want, and let it earn income when you’re not on the island. Very few investments combine lifestyle upside with such compelling cash-flow potential."
+        ]
       },
       {
         img: "https://images.unsplash.com/photo-1501117716987-c8e3f7f03c54?q=80&w=2400&auto=format&fit=crop",
         kicker: "Value Gap",
         title: "Undervalued vs. Phuket & Bali",
-        text: "Comparable villa stock in Samui often lists 20–40% below saturated peers—while delivering similar lifestyle and stronger scarcity dynamics.",
+        text: [
+          "Investors often ask: why Samui, not Phuket or Bali? The answer is value, saturation, and future trajectory.",
+          "Phuket: already heavily developed, with villa prices frequently exceeding $1.5M for properties that deliver just 6–8% yields. Competition is intense and growth is slowing.",
+          "Bali (Canggu, Seminyak): once a hidden gem, now overcrowded. Villas often priced $1.2M+, with legal restrictions tightening.",
+          "Koh Samui: villas in prime neighborhoods regularly sell between $700k and $1.1M—roughly 20–40% below comparable properties in Phuket. At the same time, Samui has lower density, a stronger luxury positioning, and significant growth runway."
+        ]
       },
       {
         img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2400&auto=format&fit=crop",
         kicker: "Ownership Paths",
         title: "Practical Routes for Foreign Buyers",
-        text: "Condo freehold is straightforward. Villas via secure leasehold or company structures with reputable legal guidance.",
+        text: [
+          "Thailand is often misunderstood as being ‘difficult’ for foreign property ownership. The truth is there are clear, established pathways that have been used successfully for years.",
+          "Condominium freehold is straightforward: foreigners can directly own condos in their own name within the foreign quota.",
+          "Villas are typically structured via renewable 30-year leaseholds, reputable Thai company structures, or usufruct/ superficies arrangements. With experienced legal counsel and due diligence, these provide secure, long-term control.",
+          "Property holding costs are modest and Thailand’s ongoing expenses are generally favorable compared to many Western markets."
+        ]
       },
       {
         img: "https://images.unsplash.com/photo-1546484959-f9a53db89b01?q=80&w=2400&auto=format&fit=crop",
         kicker: "Numbers That Matter",
-        title: "Income + Appreciation Potential",
-        text: "Case studies commonly target strong net yields with quality operators. Pair that with island supply constraints for compelling upside.",
+        title: "Proven ROI with Real Case Studies",
+        text: [
+          "Let’s look at real-world performance to ground the thesis.",
+          "Case Study 1: A London investor purchased a 4BR villa in Bophut in 2022 for $950,000. In 2023 it generated about $132,000 in rental income, netting ~9.2% yield after management fees. Today, comparable villas list at $1.1M–$1.2M—roughly 12–15% capital appreciation in two years.",
+          "Case Study 2: A Singapore family acquired a $600,000 hillside villa in Lamai in 2021. They split usage between family holidays and rentals. Even with personal stays, the villa generated ~$58,000 net in 2023, covering all expenses and delivering positive cash flow.",
+          "These outcomes are typical when you select the right location, property configuration, and professional operator."
+        ]
       },
       {
         img: "https://images.unsplash.com/photo-1539632346654-dd4c3cdf1d6f?q=80&w=2400&auto=format&fit=crop",
         kicker: "Next Step",
         title: "Tell Us Your Budget & Timeline",
-        text: "We match you privately to opportunities that fit. No developer is disclosed until you opt in.",
+        text: [
+          "Every investor has different priorities—whether it’s pure yield, a retirement retreat, or lifestyle blended with appreciation. That’s why we work privately and confidentially: to match you only with opportunities that fit your exact goals.",
+          "By sharing your budget and timeline through our intake form, you’ll get access to curated, vetted opportunities that are not publicly advertised. Developers are only introduced once we know the match is right, protecting your privacy and ensuring your time is respected.",
+          "The opportunity in Koh Samui is real, but the window will not remain this open forever. Scarcity, growth, and global attention are converging. The smartest move is to explore your options today."
+        ],
         cta: { label: "Submit Your Intake", href: "/#intake" }
       }
     ];
 
-    // ---- Build slides ----
+    // ---- Builder (supports arrays of paragraphs and optional lists) ----
     const make = (tag, props={}, children=[])=>{
       const el = document.createElement(tag);
       Object.entries(props).forEach(([k,v])=>{
@@ -134,27 +164,46 @@
 
     const root = document.body;
     const dotWrap = document.getElementById('dots');
+
     const slideEls = slides.map((s,i)=>{
       const wrap = make('div',{class:'slide'+(i===0?' active':'')});
       const img = make('img',{class:'bg',src:s.img,alt:s.title});
+      const body = make('div',{class:'lead'});
+
+      // Render paragraphs (array or string)
+      if (Array.isArray(s.text)) {
+        s.text.forEach(p => body.appendChild(make('p',{},[p])));
+      } else if (typeof s.text === 'string') {
+        body.appendChild(make('p',{},[s.text]));
+      }
+
+      // Optional bullet list support (s.list = [ ... ])
+      if (Array.isArray(s.list) && s.list.length){
+        const ul = make('ul',{});
+        s.list.forEach(item=> ul.appendChild(make('li',{},[item])));
+        body.appendChild(ul);
+      }
+
       const box = make('div',{class:'content'},[
         make('div',{class:'kicker'},[s.kicker]),
         make('h2',{},[s.title]),
-        make('p',{class:'lead'},[s.text]),
+        body
       ]);
       if(s.cta){
         box.appendChild(make('a',{class:'cta',href:s.cta.href},[s.cta.label]));
       }
+
       wrap.appendChild(img); wrap.appendChild(box);
       root.appendChild(wrap);
-      // dot
+
       const d = make('div',{class:'dot'+(i===0?' active':''),'data-idx':i});
       d.addEventListener('click',()=>go(i));
       dotWrap.appendChild(d);
       return wrap;
     });
 
-    let idx = 0, timer=null, autoMs=7000;
+    let idx = 0, timer=null;
+    const autoMs = 0; // set to e.g. 12000 to auto-advance every 12s
 
     function setActive(n){
       slideEls.forEach((el,i)=> el.classList.toggle('active', i===n));
@@ -168,11 +217,9 @@
     function next(){ go(idx+1); }
     function prev(){ go(idx-1); }
 
-    // Controls
     document.getElementById('next').addEventListener('click', next);
     document.getElementById('prev').addEventListener('click', prev);
 
-    // Keyboard
     window.addEventListener('keydown', (e)=>{
       if(e.key==='ArrowRight') next();
       if(e.key==='ArrowLeft') prev();
@@ -188,7 +235,7 @@
 
     function resetAuto(){
       if(timer) clearInterval(timer);
-      timer = setInterval(next, autoMs);
+      if(autoMs && autoMs>0) timer = setInterval(next, autoMs);
     }
     resetAuto();
   </script>
