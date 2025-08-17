@@ -298,7 +298,7 @@
           <div id="intakeMsg" class="disclaimer"></div>
 
           <div class="disclaimer" style="margin-top:8px">
-            After review, we’ll contact you to confirm fit and next steps. You remain anonymous to developers until you opt-in.
+            After review, we’ll contact you to confirm fit and next steps.
           </div>
         </form>
       </div>
@@ -359,10 +359,10 @@
     WhatsApp
   </a>
 
-  <script>
-  // ... existing config above ...
-    const FORMSPREE_GUIDE = "https://formspree.io/f/mgvzbznd";
-    const FORMSPREE_INTAKE = "https://formspree.io/f/mdkdvdpe";
+<script>
+  // Endpoints
+  const FORMSPREE_GUIDE  = "https://formspree.io/f/mgvzbznd";
+  const FORMSPREE_INTAKE = "https://formspree.io/f/mdkdvdpe";
 
   async function handleForm(formId, endpoint, successElId, successMessage){
     const form = document.getElementById(formId);
@@ -372,15 +372,22 @@
       msg.textContent = "Submitting...";
       const data = new FormData(form);
       data.append("_subject", formId === "guideForm" ? "Guide Request" : "Investment Intake");
+
       try{
         const res = await fetch(endpoint, { method:"POST", headers:{ "Accept":"application/json" }, body:data });
         if(res.ok){
           if(formId === "guideForm"){
             // ✅ Redirect to the full-screen guide page
-            window.location.href = "https://wtrak.github.io/Koh/guide.html";
+            window.location.href = "guide.html"; // or "https://wtrak.github.io/Koh/guide.html"
             return;
           }
-          // Intake success stays inline (or redirect if you want)
+          if(formId === "intakeForm"){
+            // ✅ Redirect to the thank-you page after investor intake
+            window.location.href = "thank-you.html"; // or "https://wtrak.github.io/Koh/thank-you.html"
+            return;
+          }
+
+          // Fallback (shouldn't hit because both forms redirect)
           msg.style.color = "#065f46";
           msg.textContent = successMessage;
           form.reset();
@@ -399,6 +406,7 @@
   handleForm("guideForm",  FORMSPREE_GUIDE,  "guideMsg",  "Thanks! Check your inbox for the guide.");
   handleForm("intakeForm", FORMSPREE_INTAKE, "intakeMsg", "Received. We’ll review and follow up shortly.");
 </script>
+
 
 </body>
 </html>
