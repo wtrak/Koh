@@ -5,132 +5,300 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ultimate Guide to Koh Samui 2025 • Hotels, Dining, Beaches & Lifestyle</title>
   <meta name="description" content="Discover Koh Samui’s best luxury hotels, restaurants, beaches, and fitness spots. Explore the island lifestyle while finding investment opportunities." />
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Shared site tokens (matches your other pages) */
+      --ink:#0f172a;            /* deep navy text */
+      --muted:#64748b;          /* slate gray */
+      --bg:#f9fafb;             /* page background */
+      --card:#ffffff;           /* surfaces */
+      --line:#e2e8f0;           /* hairline */
+      --accent:#047857;         /* emerald */
+      --accent-600:#065f46;     /* deeper emerald */
+      --pill:#ecfdf5;           /* pale green */
+      --radius:14px;
+      --shadow:0 6px 20px rgba(2,6,23,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--bg); color:var(--ink);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.65;
+    }
+
+    /* Top header for article */
+    .site-header{
+      background:var(--card); border-bottom:1px solid var(--line);
+    }
+    .site-header .wrap{
+      max-width:1100px; margin:0 auto; padding:14px 20px;
+      display:flex; gap:16px; align-items:center; justify-content:space-between;
+    }
+    .site-header a{color:var(--ink); text-decoration:none; font-weight:600}
+    .btn-cta{
+      padding:10px 16px; border-radius:12px; background:var(--accent);
+      color:#fff !important; text-decoration:none; font-weight:700;
+      box-shadow:var(--shadow);
+    }
+    .btn-cta:hover{background:var(--accent-600)}
+
+    /* Hero / Title block */
+    .hero{
+      background:var(--card); border-bottom:1px solid var(--line);
+    }
+    .hero .wrap{
+      max-width:1100px; margin:0 auto; padding:34px 20px 20px;
+      display:grid; grid-template-columns: 1fr 280px; gap:28px;
+    }
+    @media (max-width: 960px){
+      .hero .wrap{grid-template-columns:1fr}
+    }
+    .eyebrow{
+      display:inline-block; padding:6px 10px; border-radius:999px;
+      background:var(--pill); color:var(--accent); font-weight:700; font-size:.8rem; letter-spacing:.04em;
+    }
+    h1{
+      margin:.6rem 0 10px; font-size:clamp(1.9rem, 3.2vw, 2.4rem); line-height:1.2;
+    }
+    .lede{color:var(--muted); max-width:60ch}
+
+    /* Sticky TOC */
+    .toc{
+      position:sticky; top:12px; align-self:start;
+      background:var(--card); border:1px dashed var(--line);
+      border-radius:var(--radius); padding:14px 14px 12px;
+    }
+    .toc h4{margin:2px 0 8px; font-size:.95rem}
+    .toc a{
+      display:block; color:var(--ink); text-decoration:none; font-weight:600; font-size:.95rem;
+      padding:6px 8px; border-radius:10px;
+    }
+    .toc a:hover{background:#f1f5f9}
+    .toc small{color:var(--muted); display:block; margin-bottom:6px}
+
+    /* Article body */
+    main{
+      max-width:1100px; margin:0 auto; padding:20px;
+      display:grid; grid-template-columns: 1fr 280px; gap:28px;
+    }
+    @media (max-width: 960px){
+      main{grid-template-columns:1fr}
+    }
+    .prose{
+      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:26px;
+    }
+    .prose h2{margin-top:8px; margin-bottom:8px; font-size:1.5rem}
+    .prose h3{margin-top:18px; margin-bottom:8px; font-size:1.1rem}
+    .prose p{margin:.5rem 0; color:var(--ink)}
+    .prose ul{padding-left:1.1rem; margin:.4rem 0}
+    .prose li{margin:.4rem 0}
+    .note{
+      border:1px dashed var(--line); border-radius:12px; padding:14px; background:#f8fafc; color:var(--muted);
+    }
+
+    /* Picks list as clean cards */
+    .picks{display:grid; gap:10px}
+    .pick{
+      background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;
+    }
+    .pick strong a{color:var(--ink); text-decoration:none}
+    .pick strong a:hover{text-decoration:underline}
+    .muted{color:var(--muted)}
+
+    /* Inline CTAs */
+    .cta-row{margin:18px 0 8px; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      display:inline-block; padding:10px 14px; border-radius:12px; font-weight:700; text-decoration:none;
+    }
+    .btn.primary{background:var(--accent); color:#fff}
+    .btn.primary:hover{background:var(--accent-600)}
+    .btn.ghost{border:1px solid var(--line); color:var(--ink); background:#fff}
+    .btn.ghost:hover{background:#f8fafc}
+
+    /* Footer band */
+    .band{
+      background:#0b1120; color:#cbd5e1; text-align:center; padding:28px 20px; margin-top:30px;
+      border-top:1px solid #111827;
+    }
+    /* Smooth anchor scroll */
+    html{scroll-behavior:smooth}
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Ultimate Guide to Koh Samui (2025)</h1>
-    <p>Your comprehensive insider look at Koh Samui’s hotels, dining, beaches, and lifestyle — plus how you can be part of its booming property investment future.</p>
-    <a class="cta-button" href="https://kohsamui.investments">Explore Investment Opportunities</a>
+
+  <!-- Top bar -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/blog/">← Back to Blog</a>
+      <a href="/#intake" class="btn-cta">See Opportunities</a>
+    </div>
   </header>
 
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Lifestyle Guide</span>
+        <h1>Ultimate Guide to Koh Samui (2025)</h1>
+        <p class="lede">Your comprehensive insider look at Koh Samui’s hotels, dining, beaches, and lifestyle — plus how you can be part of its booming property investment future.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://kohsamui.investments/#guide">Get the 2025 Guide</a>
+          <a class="btn ghost" href="https://kohsamui.investments/#intake">Explore Investment Opportunities</a>
+        </div>
+      </div>
+
+      <!-- Sticky TOC -->
+      <aside class="toc" aria-label="On this page">
+        <h4>On this page</h4>
+        <small>Jump to:</small>
+        <a href="#hotels">Hotels</a>
+        <a href="#restaurants">Restaurants</a>
+        <a href="#beaches">Beaches</a>
+        <a href="#fitness">Sports & Fitness</a>
+        <a href="#invest">Invest in Samui</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Body -->
   <main>
+    <article class="prose">
 
-    <!-- Hotels -->
-    <section>
-      <h2>Best Hotels in Koh Samui</h2>
-      <p>Whether you’re seeking barefoot luxury, elegant resorts, or hidden gems, Koh Samui offers a range of accommodations to fit every traveler’s taste.</p>
+      <!-- Hotels -->
+      <section id="hotels" aria-labelledby="hotels-h2">
+        <h2 id="hotels-h2">Best Hotels in Koh Samui</h2>
+        <p class="muted">Whether you’re seeking barefoot luxury, elegant resorts, or hidden gems, Koh Samui offers a range of accommodations to fit every traveler’s taste.</p>
 
-      <h3>Luxury Picks</h3>
-      <ul>
-        <li><strong>[Four Seasons Resort Koh Samui](https://www.fourseasons.com/kohsamui/)</strong> – Nestled on a private hillside, this five-star sanctuary offers infinity pools, private villas, and legendary service with breathtaking views of the Gulf of Thailand.</li>
-        <li><strong>[The Ritz-Carlton Koh Samui](https://www.ritzcarlton.com/en/hotels/koh-samui)</strong> – A blend of modern luxury and Thai tradition, offering a private bay, spa village, and curated experiences for guests seeking the best in island living.</li>
-        <li><strong>[Banyan Tree Samui](https://www.banyantree.com/thailand/samui)</strong> – Known for its hillside pool villas and holistic wellness focus, this resort combines panoramic sea views with world-class spa treatments.</li>
-      </ul>
+        <h3>Luxury Picks</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.fourseasons.com/kohsamui/" target="_blank" rel="noopener">Four Seasons Resort Koh Samui</a></strong> — Nestled on a private hillside, this five‑star sanctuary offers infinity pools, private villas, and legendary service with breathtaking views of the Gulf of Thailand.</div>
+          <div class="pick"><strong><a href="https://www.ritzcarlton.com/en/hotels/koh-samui" target="_blank" rel="noopener">The Ritz‑Carlton Koh Samui</a></strong> — A blend of modern luxury and Thai tradition, with a private bay, spa village, and curated experiences for guests seeking top‑tier island living.</div>
+          <div class="pick"><strong><a href="https://www.banyantree.com/thailand/samui" target="_blank" rel="noopener">Banyan Tree Samui</a></strong> — Hillside pool villas with panoramic sea views and a holistic spa program make this a favorite for wellness‑minded travelers.</div>
+        </div>
 
-      <h3>High-End / Normal Resorts</h3>
-      <ul>
-        <li><strong>[Sala Samui Chaweng Beach Resort](https://www.salahospitality.com/samui-chaweng/)</strong> – A stylish beachfront retreat with pool suites and rooftop dining overlooking Chaweng Beach.</li>
-        <li><strong>[Hansar Samui Resort](https://www.hansarsamui.com/)</strong> – Located in Fisherman’s Village, Hansar offers chic modern design with a laid-back beachfront vibe.</li>
-        <li><strong>[Rocky’s Boutique Resort](https://www.rockyresort.com/)</strong> – A romantic, family-run escape near Lamai Beach that combines personal service with intimate luxury.</li>
-      </ul>
+        <h3>High‑End / Normal Resorts</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.salahospitality.com/samui-chaweng/" target="_blank" rel="noopener">SALA Samui Chaweng Beach Resort</a></strong> — Stylish beachfront retreat with pool suites and rooftop dining overlooking Chaweng’s turquoise waters.</div>
+          <div class="pick"><strong><a href="https://www.hansarsamui.com/" target="_blank" rel="noopener">Hansar Samui Resort</a></strong> — Steps from Fisherman’s Village; chic design, beachside pool, and walkable dining.</div>
+          <div class="pick"><strong><a href="https://www.rockyresort.com/" target="_blank" rel="noopener">Rocky’s Boutique Resort</a></strong> — Intimate, family‑run escape near Lamai with warm service and a quiet cove setting.</div>
+        </div>
 
-      <h3>Wild Cards</h3>
-      <ul>
-        <li><strong>[Treehouse Villas Koh Samui](https://www.booking.com/hotel/th/treehouse-villas-samui.html)</strong> – Eco-friendly treehouse-style accommodations perfect for travelers seeking something different and adventurous.</li>
-        <li><strong>[The Jungle Club](https://www.jungleclubsamui.com/)</strong> – Perched high in the hills, this rustic retreat offers simple bungalows with the best panoramic views of Koh Samui.</li>
-      </ul>
+        <h3>Wild Cards</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.booking.com/hotel/th/treehouse-villas-samui.html" target="_blank" rel="noopener">Treehouse Villas Koh Samui</a></strong> — Eco‑leaning, treehouse‑style stays for travelers seeking something truly different.</div>
+          <div class="pick"><strong><a href="https://www.jungleclubsamui.com/" target="_blank" rel="noopener">The Jungle Club</a></strong> — Rustic hillside bungalows with one of the island’s best panoramas.</div>
+        </div>
 
-      <a class="cta-button" href="https://kohsamui.investments">Discover Investment Insights</a>
-    </section>
+        <div class="cta-row">
+          <a class="btn primary" href="https://kohsamui.investments/#intake">Discover Investment Insights</a>
+        </div>
+      </section>
 
-    <!-- Restaurants -->
-    <section>
-      <h2>Top Restaurants in Koh Samui</h2>
-      <p>From Michelin-rated fine dining to beachfront Thai kitchens and quirky cafés, Koh Samui’s food scene is as diverse as it is delicious.</p>
+      <!-- Restaurants -->
+      <section id="restaurants" aria-labelledby="restaurants-h2">
+        <h2 id="restaurants-h2">Top Restaurants in Koh Samui</h2>
+        <p class="muted">From Michelin‑rated fine dining to beachfront Thai kitchens and quirky cafés, Koh Samui’s food scene is as diverse as it is delicious.</p>
 
-      <h3>Luxury Dining</h3>
-      <ul>
-        <li><strong>[Dining on the Rocks – Six Senses Samui](https://www.sixsenses.com/en/resorts/samui/dining/dining-on-the-rocks)</strong> – Iconic clifftop restaurant serving contemporary cuisine with sweeping ocean views.</li>
-        <li><strong>[Tree Tops Sky Dining & Bar](https://www.anantara.com/en/bophut-koh-samui/restaurants/tree-tops-sky-dining)</strong> – Private dining pods perched in the treetops, offering gourmet tasting menus in an unforgettable setting.</li>
-        <li><strong>[The Cliff Bar & Grill](https://www.thecliffsamui.com/)</strong> – Known for its Mediterranean-inspired menu and oceanfront clifftop views.</li>
-      </ul>
+        <h3>Luxury Dining</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.sixsenses.com/en/resorts/samui/dining/dining-on-the-rocks" target="_blank" rel="noopener">Dining on the Rocks — Six Senses Samui</a></strong> — Iconic clifftop venue serving contemporary tasting menus with sweeping ocean views.</div>
+          <div class="pick"><strong><a href="https://www.anantara.com/en/bophut-koh-samui/restaurants/tree-tops-sky-dining" target="_blank" rel="noopener">Tree Tops Sky Dining & Bar</a></strong> — Private treetop pods and refined multi‑course menus in a dramatic setting.</div>
+          <div class="pick"><strong><a href="https://www.thecliffsamui.com/" target="_blank" rel="noopener">The Cliff Bar & Grill</a></strong> — Mediterranean‑leaning plates and a clifftop terrace over the gulf.</div>
+        </div>
 
-      <h3>High-End / Normal</h3>
-      <ul>
-        <li><strong>[Fisherman’s Village Restaurants](https://www.kosamui.com/fishermans-village/)</strong> – A collection of seaside restaurants ranging from Thai seafood grills to international bistros.</li>
-        <li><strong>[Red Snapper](https://www.facebook.com/redsnapper.samui/)</strong> – A stylish Chaweng restaurant with a focus on fresh seafood and live jazz music.</li>
-        <li><strong>[Coco Tam’s](https://www.cocotams.com/)</strong> – Famous beach bar and restaurant where beanbags on the sand meet wood-fired pizzas and fire shows.</li>
-      </ul>
+        <h3>High‑End / Normal</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.kosamui.com/fishermans-village/" target="_blank" rel="noopener">Fisherman’s Village Restaurants</a></strong> — A walkable strip of seaside eateries from Thai seafood grills to international bistros.</div>
+          <div class="pick"><strong><a href="https://www.facebook.com/redsnapper.samui/" target="_blank" rel="noopener">Red Snapper</a></strong> — Stylish Chaweng mainstay with fresh seafood and occasional live jazz.</div>
+          <div class="pick"><strong><a href="https://www.cocotams.com/" target="_blank" rel="noopener">Coco Tam’s</a></strong> — Sand‑side bar/restaurant for wood‑fired pizzas, sunsets, and fire shows.</div>
+        </div>
 
-      <h3>Wild Cards</h3>
-      <ul>
-        <li><strong>[Noori India](https://www.tripadvisor.com/Restaurant_Review-g293918-d1148083-Reviews-Noori_India-Ko_Samui_Surat_Thani_Province.html)</strong> – One of the island’s most authentic Indian restaurants, a surprise hit among both tourists and expats.</li>
-        <li><strong>[The Hungry Wolf](https://www.thehungrywolfkohsamui.com/)</strong> – A quirky Lamai spot famous for its massive burgers and comfort food.</li>
-      </ul>
-    </section>
+        <h3>Wild Cards</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.tripadvisor.com/Restaurant_Review-g293918-d1148083-Reviews-Noori_India-Ko_Samui_Surat_Thani_Province.html" target="_blank" rel="noopener">Noori India</a></strong> — Long‑running local favorite for authentic North Indian flavors.</div>
+          <div class="pick"><strong><a href="https://www.thehungrywolfkohsamui.com/" target="_blank" rel="noopener">The Hungry Wolf</a></strong> — Big‑hearted burgers and comfort food in Lamai.</div>
+        </div>
+      </section>
 
-    <!-- Beaches -->
-    <section>
-      <h2>Best Beaches in Koh Samui</h2>
-      <p>Koh Samui’s coastline offers everything from lively stretches filled with nightlife to quiet coves ideal for relaxation.</p>
+      <!-- Beaches -->
+      <section id="beaches" aria-labelledby="beaches-h2">
+        <h2 id="beaches-h2">Best Beaches in Koh Samui</h2>
+        <p class="muted">The coastline ranges from lively stretches with nightlife to quiet coves ideal for retreat‑style downtime.</p>
 
-      <h3>Luxury Beaches</h3>
-      <ul>
-        <li><strong>[Chaweng Beach](https://www.kosamui.com/chaweng/)</strong> – The island’s most famous beach, lined with luxury resorts, nightlife, and a vibrant atmosphere.</li>
-        <li><strong>[Lamai Beach](https://www.kosamui.com/lamai/)</strong> – A slightly quieter option than Chaweng, with a mix of high-end resorts and family-friendly vibes.</li>
-        <li><strong>[Bophut Beach](https://www.kosamui.com/bophut/)</strong> – Home to Fisherman’s Village, offering a more refined, boutique beach experience.</li>
-      </ul>
+        <h3>Luxury Beaches</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.kosamui.com/chaweng/" target="_blank" rel="noopener">Chaweng Beach</a></strong> — Samui’s most famous strip with luxury resorts, dining, and nightlife.</div>
+          <div class="pick"><strong><a href="https://www.kosamui.com/lamai/" target="_blank" rel="noopener">Lamai Beach</a></strong> — A touch quieter than Chaweng with a broad mix of stays and family‑friendly vibes.</div>
+          <div class="pick"><strong><a href="https://www.kosamui.com/bophut/" target="_blank" rel="noopener">Bophut Beach</a></strong> — Refined, boutique energy anchored by Fisherman’s Village.</div>
+        </div>
 
-      <h3>High-End / Normal</h3>
-      <ul>
-        <li><strong>[Silver Beach (Thongtakian)](https://www.kosamui.com/magazine/silver-beach.htm)</strong> – Small but stunning, with calm waters perfect for swimming.</li>
-        <li><strong>[Choeng Mon Beach](https://www.kosamui.com/choeng-mon/)</strong> – A peaceful beach often favored by families and couples looking to avoid the crowds.</li>
-        <li><strong>[Maenam Beach](https://www.kosamui.com/maenam/)</strong> – Known for its laid-back atmosphere and long golden stretch of sand.</li>
-      </ul>
+        <h3>High‑End / Normal</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.kosamui.com/magazine/silver-beach.htm" target="_blank" rel="noopener">Silver Beach (Thongtakian)</a></strong> — Small, pretty cove with calm, swim‑friendly waters.</div>
+          <div class="pick"><strong><a href="https://www.kosamui.com/choeng-mon/" target="_blank" rel="noopener">Choeng Mon Beach</a></strong> — Peaceful bay favored by couples and families, away from the bustle.</div>
+          <div class="pick"><strong><a href="https://www.kosamui.com/maenam/" target="_blank" rel="noopener">Maenam Beach</a></strong> — Long golden arc with a laid‑back, barefoot vibe.</div>
+        </div>
 
-      <h3>Wild Cards</h3>
-      <ul>
-        <li><strong>[Coral Cove](https://www.tripadvisor.com/Attraction_Review-g293918-d447270-Reviews-Coral_Cove_Beach-Ko_Samui_Surat_Thani_Province.html)</strong> – A small, hidden bay with crystal-clear water, great for snorkeling.</li>
-        <li><strong>[Taling Ngam Beach](https://www.kosamui.com/taling-ngam/)</strong> – A serene escape offering incredible sunsets and views of the Five Islands.</li>
-      </ul>
+        <h3>Wild Cards</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.tripadvisor.com/Attraction_Review-g293918-d447270-Reviews-Coral_Cove_Beach-Ko_Samui_Surat_Thani_Province.html" target="_blank" rel="noopener">Coral Cove</a></strong> — Pocket‑sized bay with clear water and easy snorkeling.</div>
+          <div class="pick"><strong><a href="https://www.kosamui.com/taling-ngam/" target="_blank" rel="noopener">Taling Ngam Beach</a></strong> — West‑coast sunsets and views to the Five Islands; serene and uncrowded.</div>
+        </div>
 
-      <a class="cta-button" href="https://kohsamui.investments">Learn About Investing in Samui</a>
-    </section>
+        <div class="cta-row">
+          <a class="btn primary" href="https://kohsamui.investments/#intake">Learn About Investing in Samui</a>
+        </div>
+      </section>
 
-    <!-- Sports & Fitness -->
-    <section>
-      <h2>Sports & Fitness in Koh Samui</h2>
-      <p>Wellness and fitness are at the heart of Koh Samui’s lifestyle. From world-class gyms and yoga retreats to Muay Thai camps, the island is a hub for active travelers.</p>
+      <!-- Sports & Fitness -->
+      <section id="fitness" aria-labelledby="fitness-h2">
+        <h2 id="fitness-h2">Sports & Fitness in Koh Samui</h2>
+        <p class="muted">Wellness is core to the island’s identity—from world‑class yoga and spa retreats to Muay Thai camps and dive schools.</p>
 
-      <h3>Luxury Fitness & Wellness</h3>
-      <ul>
-        <li><strong>[Kamalaya Wellness Sanctuary](https://www.kamalaya.com/)</strong> – A globally acclaimed wellness retreat focusing on holistic health, yoga, and spa therapies.</li>
-        <li><strong>[Absolute Sanctuary](https://www.absolutesanctuary.com/)</strong> – Specializes in yoga, detox, and fitness programs with a resort-like atmosphere.</li>
-        <li><strong>[Vikasa Yoga Retreat](https://vikasayoga.com/)</strong> – Famous for yoga teacher training and retreats overlooking the ocean.</li>
-      </ul>
+        <h3>Luxury Fitness & Wellness</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.kamalaya.com/" target="_blank" rel="noopener">Kamalaya Wellness Sanctuary</a></strong> — Globally acclaimed for holistic programs spanning detox, stress relief, and integrative medicine.</div>
+          <div class="pick"><strong><a href="https://www.absolutesanctuary.com/" target="_blank" rel="noopener">Absolute Sanctuary</a></strong> — Yoga, Pilates, and fitness intensives with nutrition‑forward dining.</div>
+          <div class="pick"><strong><a href="https://vikasayoga.com/" target="_blank" rel="noopener">Vikasa Yoga Retreat</a></strong> — Ocean‑view yoga shalas, teacher trainings, and wellness café culture.</div>
+        </div>
 
-      <h3>High-End / Normal</h3>
-      <ul>
-        <li><strong>[Superpro Samui](https://www.superprosamui.com/)</strong> – Thailand’s leading Muay Thai and MMA training camp, popular with beginners and pros.</li>
-        <li><strong>[Samui Fitness Retreat](https://samuifitnessretreat.com/)</strong> – A bootcamp-style retreat for strength, conditioning, and weight loss.</li>
-        <li><strong>[Fitkoh](https://fitkoh.com/)</strong> – Focused on fitness transformation programs, combining exercise, diet, and community.</li>
-      </ul>
+        <h3>High‑End / Normal</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.superprosamui.com/" target="_blank" rel="noopener">Superpro Samui</a></strong> — One of Thailand’s best‑known Muay Thai/MMA camps, welcoming all levels.</div>
+          <div class="pick"><strong><a href="https://samuifitnessretreat.com/" target="_blank" rel="noopener">Samui Fitness Retreat</a></strong> — Bootcamp‑style programs for conditioning, strength, and weight loss.</div>
+          <div class="pick"><strong><a href="https://fitkoh.com/" target="_blank" rel="noopener">Fitkoh</a></strong> — Transformation‑focused schedules combining training, nutrition, and recovery.</div>
+        </div>
 
-      <h3>Wild Cards</h3>
-      <ul>
-        <li><strong>[CrossFit Lamai](https://www.facebook.com/crossfitlamai/)</strong> – A dedicated CrossFit box in the heart of Lamai, perfect for strength enthusiasts.</li>
-        <li><strong>[Easy Divers Samui](https://www.easydivers-samui.com/)</strong> – For those who prefer their fitness underwater, this PADI dive school offers incredible scuba experiences.</li>
-      </ul>
-    </section>
+        <h3>Wild Cards</h3>
+        <div class="picks">
+          <div class="pick"><strong><a href="https://www.facebook.com/crossfitlamai/" target="_blank" rel="noopener">CrossFit Lamai</a></strong> — Dedicated box in Lamai for serious strength and community WODs.</div>
+          <div class="pick"><strong><a href="https://www.easydivers-samui.com/" target="_blank" rel="noopener">Easy Divers Samui</a></strong> — PADI dive school for fitness underwater—intro dives to pro certs.</div>
+        </div>
+      </section>
 
-    <!-- Conclusion -->
-    <section>
-      <h2>Experience Koh Samui — and Invest in Its Future</h2>
-      <p>Koh Samui is more than just a destination — it’s a lifestyle. Whether you’re drawn by luxury resorts, authentic dining, or world-class wellness, the island offers something for everyone. And with the island’s rapid growth, investing here has never been more promising.</p>
-      <a class="cta-button" href="https://kohsamui.investments">Start Your Investment Journey</a>
-    </section>
+      <!-- Conclusion -->
+      <section id="invest" aria-labelledby="invest-h2">
+        <h2 id="invest-h2">Experience Koh Samui — and Invest in Its Future</h2>
+        <p>Koh Samui is more than a destination—it’s a lifestyle. Whether you’re drawn by luxury resorts, authentic dining, or world‑class wellness, the island offers something for everyone. With strong demand and finite island supply, investing here has never been more promising.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://kohsamui.investments/#intake">Start Your Investment Journey</a>
+          <a class="btn ghost" href="#top">Back to top</a>
+        </div>
+      </section>
 
+    </article>
+
+    <!-- Right rail duplicates TOC on mobile collapse (hidden on desktop since sticky exists) -->
+    <aside class="toc" aria-label="On this page" style="display:none"></aside>
   </main>
+
+  <!-- Footer band -->
+  <div class="band">© 2025 Koh Samui Investments • Private intake • No spam • HTTPS secure</div>
 </body>
 </html>
